@@ -1,0 +1,455 @@
+:root{
+    --primary: #010101;
+    --bg: #ffff; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+    font-family: sans-serif;
+}
+
+body{
+
+	font-family: 'Poppins', sans-serif;
+	background-color:  var(--bg);
+	color: #010101;
+    
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4 rem 7%;
+    background-color: #ff5cad;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.2);
+    position: fixed;
+    top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+   
+    
+}
+.navbar .navbar-logo{
+	margin-left: 4%;
+    margin-top: 1%;
+	margin-bottom: 1%;
+	font-size: 2rem;
+	font-weight: 600;
+	color: #fff;
+}
+
+.navbar .navbar-logo span{
+ 	color: var(--primary);
+ }
+.navbar .navbar-nav{
+    padding-right: 10rem;
+}
+ .navbar .navbar-nav a{
+    align-self: last baseline;
+ 	color: #fff;
+ 	display: inline-block;
+ 	font-size: 1rem;
+ 	margin: 0 1rem; 
+ }
+
+ .navbar .navbar-nav a:hover{
+ 	color: var(--primary);
+     transform: scale(1.1);
+
+
+ }
+.navbar .navbar-nav a::after{
+	content: '';
+	display: block;
+	padding-bottom: 0.5rem;
+	border-bottom: 0.1rem solid var(--primary);
+	transform: scaleX(0);
+	transition: 0.2s linier;
+}
+.navbar .navbar-nav a:hover::after{
+	transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a{
+  color: #fff;
+}
+
+.navbar .navbar-extra a:hover{
+    color: var(--primary);
+}
+#hamburger-menu{
+    color: #fff;
+    display: none;
+}
+
+/*media queris */
+
+
+/*Tablet */
+@media (max-width: 768px){
+    html{
+        font-size: 62.5%;
+    }
+    #hamburger-menu{
+        padding: 1.3rem;
+        display: inline-block;
+    }
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color:  #ffa8d4;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+    .navbar .navbar-nav.active{
+        right: 0;
+    }
+    .navbar .navbar-nav a{
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1.8rem;
+    }
+    .navbar .navbar-nav a:hover{
+        transform: scale(1);
+    }
+    .navbar .navbar-nav a::after{
+        transform-origin: 0 0;
+    }
+    .navbar .navbar-nav a:hover:after{
+        transform: scaleX(0.2);
+    }
+    .about .row{
+        flex-wrap: wrap;
+    }
+    .about .row .about-img img{
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+    .about .row .content{
+        padding: 0;
+    }
+    .about .row .content h3{
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+    .about .row .content p{
+        font-size: 1.6rem;
+    }
+    .kontak .row {
+        flex-wrap: wrap;
+    }
+    .kontak .row .map{
+        height: 30rem;
+    }
+    .kontak .row form{
+        padding-top: 0;
+    }
+   
+   
+}
+
+/*Mobile */
+@media (max-width: 450){
+    html{
+        font-size: 55%;
+    }
+    
+}
+
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../main.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.hero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: (0deg, rgb(252, 101, 252)3%, rgba(241, 117, 204, 0)10%);
+}
+.hero .content .nama{
+    animation: color-animation 4s linear infinite;
+}
+.span1{
+    --color-1: #ff70c3;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+.span2{
+    --color-1: #4a84db;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+.span3{
+    --color-1: #ce2a2a;
+  --color-2: #DF8453;
+  --color-3: #339c1d;
+}
+@keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+
+.hero .content{
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content h4{
+    font-size: 1.4em;
+}
+.hero .content h1{
+    font-size: 2.8em;
+}
+.hero .content p{
+    padding-top: 0.5rem;
+    
+}
+.about{
+    background-color: #fdd7e9;
+    padding: 6rem 7% 3rem;
+    min-height: 100vh;
+    
+}
+.about h2, .kontak h2{
+    color: var(--primary);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.about .content{
+    margin-left: 3rem;
+    padding-left: 9rem;
+   
+}
+.about .row .content h3{
+    font-family: serif;
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+}
+.about .content h3 span{
+    font-family: serif;
+    color: #ff1d8e;
+}
+ .about .row{
+    display: flex;
+ }
+.about .row .about-img{
+    margin-left: 8rem;
+    flex: 1 1 40rem;
+}
+.about .row .about-img img{
+    width: 80%;
+}
+.about .row .content{
+    flex: 1 1 40rem;
+    padding: 0 1rem;
+}
+.about .row .content p{
+    margin-right: 8rem;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1.6;
+}
+.tentang-saya{
+    background-color: #ffffff;
+    padding: 6rem 7% 1rem;
+    min-height: 100vh;
+   
+}
+.tentang-saya h2{
+    font-family: arial;
+    color: var(--primary);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.4rem;
+}
+.tentang-saya h2 span{
+    color: #ff1d8e;
+}
+ .tentang-saya .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    justify-content: center;
+ }
+
+
+ .card{
+    box-shadow: 0 10px 20px 0 rgb(119, 101, 112);
+    max-width: 200px;
+    max-height: 370px;
+    margin: auto;
+    text-align: center;
+    background-color: #e2e2e2;
+    color: #00000000;
+    border-radius: 10%;
+    font-family: monospace;
+   
+    
+ }
+ .row .card{
+    transition: transform 0.3s;
+ }
+ .row .card:hover{
+    transform: scale(1.1);
+    background-color: #faabd0;
+ }
+ 
+ .tentang-saya .row .card img{
+    width: 100%;
+    height: 70%;
+    border-radius: 10%;
+ }
+ .card button{
+ margin-bottom: 0.5rem;
+  padding: 5px 50px;
+  font-size: 13px;
+  cursor:pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  border-radius: 15px;
+ }
+ .card button:hover {
+    background-color: #ff0080;
+}
+
+.card button:active {
+  background-color: #64ec64;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+ .card .card-title{
+    color: #000000;
+    margin-top: 1rem;
+    font-size: 22px;
+    font-family: monospace;
+ }
+ .card p{
+    color: #010101;
+    padding: 3%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    font-size: 14px;
+    
+ }
+
+ .kontak{
+    background-color: #faabd0;
+    padding: 6rem 7% 3rem;
+ }
+ .kontak .row{
+    display: flex;
+    margin-top: 1rem;
+    background-color: #fcd0e4;
+ }
+ .kontak .row .map{
+    flex: 1 1 ;
+    width: 80%;
+    object-fit: cover;
+ }
+
+ .kontak .row form{
+    flex:  1 1 4rem;
+    padding: 2rem 2rem;
+    text-align: center;
+ }
+
+ .kontak .row form .input-grup{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    background-color:  #faabd0;
+    border: 1px solid #eee;
+    padding-left: 2rem;
+ }
+
+ .kontak .row form .input-grup input{
+    width: 90%;
+    padding: 2rem;
+    font-size: 1.3rem;
+    background-color:  #faabd0;
+    color: #010101;
+ }
+ .kontak .row form .btn{
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    color: #010101;
+    background-color: #ff0080;
+ }
+ .kontak .row form .btn:hover{
+    background-color: #ffffff;
+ }
+ .kontak .row form .btn:active {
+    background-color: #66ff00;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+footer{
+    background-color: #fc70b6;
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+}
+
+footer .social{
+    padding: 1rem 0;
+}
+footer .social a{
+    color: #fff;
+    margin: 1rem;
+}
+footer .social a:hover{
+    color: #000000;
+}
+footer .link a{
+    color: #fff;
+    padding: 0.7rem 1rem;
+}
+footer .link{
+    margin-bottom: 1.5rem;
+}
+footer .link a:hover{
+    color: #000000;
+}
+footer .credit{
+    font-size: 1rem;
+}
+footer .credit a{
+    color: #010101;
+    font-weight: 700;
+}
+html{
+    scroll-behavior: smooth;
+}
